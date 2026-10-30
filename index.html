@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marikina Matcha Guide</title>
+  <meta name="description" content="A map and guide to the best matcha spots in Marikina, with Dax's personal picks.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M14 22h36l-4 30a6 6 0 0 1-6 5H24a6 6 0 0 1-6-5z' fill='%238FA868'/><path d='M12 20h40' stroke='%234F6B3A' stroke-width='5' stroke-linecap='round'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">A guide by Dax</p>
+      <h1>Marikina Matcha Guide</h1>
+      <p class="lede">
+        Is Makati too far? Why travel all the way when you can stay in Marikina?
+      </p>
+      <nav class="jump">
+        <a href="#map">Map</a>
+        <a href="#spots">All spots</a>
+        <a href="#recommend">Recommend a place</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="filters" aria-label="Filter spots">
+      <div class="chips" id="chips" role="group"></div>
+    </section>
+
+    <section id="map" class="map-section" aria-label="Map of matcha spots">
+      <div class="map-frame">
+        <div id="leaflet"></div>
+        <p class="map-hint">Pinch with two fingers to zoom · tap a pin for details</p>
+      </div>
+      <ol class="legend" id="legend"></ol>
+    </section>
+
+    <section id="spots">
+      <div class="section-head">
+        <h2>All spots</h2>
+        <p class="muted" id="count"></p>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>No spots match those filters.</p>
+    </section>
+
+    <section id="recommend" class="endnote">
+      <h2>Did I miss a spot?</h2>
+      <p>
+        This guide is based on overall popularity and my personal favorites.
+        If you know a Marikina matcha place that belongs here, send it my way and
+        I'll make sure to check it out.
+      </p>
+      <a class="btn btn-primary" id="recommend-btn" target="_blank" rel="noopener">Recommend a place</a>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p class="muted" id="footnote"></p>
+  </footer>
+
+  <dialog id="detail" aria-labelledby="d-name">
+    <button class="close" id="d-close" aria-label="Close">&times;</button>
+    <div id="d-body"></div>
+  </dialog>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
